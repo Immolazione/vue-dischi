@@ -1,23 +1,38 @@
 <template>
-<main class="d-flex align-items-center">
-    <img src="../assets/img/spotify.png" alt="Spotify Icon">
+<main class="vh-100">
+    <div class="vh-100 container">
+        <section id="cards" class="d-flex justify-content-between">
+            <div class="single-card">
+                <img src="" alt="">
+            </div>
+        </section>
+    </div>
 </main>
 </template>
 
 <script>
 export default {
-  name: 'Main',
+name: 'Main',
+    data(){
+        return {
+            songsList: [],
+        };
+    },
+    methods: {
+        getSongCard(){
+            // axios.get('https://flynn.boolean.careers/exercises/api/array/music').then(res => {
 
+            // });
+        },
+
+    }
 }
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 @import '../assets/scss/_vars.scss';
-    main {
-        height: 5rem;
-        background-color: $header-color;
-        img {
-            width: 4rem;
-        }
-    }
+main {
+    background-color: $main-color;
+}
+
 </style>
