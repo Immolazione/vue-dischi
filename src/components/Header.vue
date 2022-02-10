@@ -12,9 +12,9 @@ export default {
 
 
 <style scoped lang="scss">
-@import '../assets/scss/_vars.scss';
+@import '../assets/scss/style.scss';
 header {
-  // position: fixed;
+  position: fixed;
   height: 5rem;
   background-color: $header-color;
   img {

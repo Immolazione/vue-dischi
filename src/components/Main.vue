@@ -1,12 +1,12 @@
 <template>
 <main class="vh-100">
-    <div class="vh-100 container">
-        <section id="cards" class="d-flex justify-content-between">
-            <div class="single-card" v-for="(card, index) in songsList.response" :key="index">
-                <img :src="card.poster" :alt="CopertinaAlbum">
-                <h1>{{card.title}}</h1>
-                <h4>{{card.author}}</h4>
-                <h4>{{card.year}}</h4>
+    <div class="container">
+        <section id="cards" class="d-flex flex-wrap row g-0">
+            <div class="mx-3 single-card d-flex flex-column" v-for="(card, index) in songsList" :key="index">
+                <img class="px-4 pt-4" :src="card.poster" :alt="card.title">
+                <h1 id="title" class="text-white text-center p-2">{{card.title}}</h1>
+                <h5 id="author" class="text-center px-2 mb-0">{{card.author}}</h5>
+                <h6 id="year" class="text-center px-2">{{card.year}}</h6>
             </div>
         </section>
     </div>
@@ -23,8 +23,8 @@ name: 'Main',
         };
     },
     mounted() {
-        axios.get('https://flynn.boolean.careers/exercises/api/array/music').then( response => {
-            this.songsList = response.data;
+        axios.get('https://flynn.boolean.careers/exercises/api/array/music').then( res => {
+            this.songsList = res.data.response;
             console.log(this.songsList);
         });
     }
@@ -32,16 +32,26 @@ name: 'Main',
 </script>
 
 <style scoped lang="scss">
-@import '../assets/scss/_vars.scss';
+@import '../assets/scss/style.scss';
 main {
     background-color: $main-color;
 }
 #cards{
+    padding-top: 6rem;
     .single-card{
-        width: 8rem;
-        height: 10rem;
+        width: 10rem;
+        height: 20rem;
         background-color: $header-color;
         margin-top: 2rem;
+        img {
+            max-width: 100%;
+        }
+        #title {
+            font-size: 1.5rem;
+        }
+        #author, #year {
+            color: $font-color;
+        }
     }
 }
 
