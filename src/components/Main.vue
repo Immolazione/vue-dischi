@@ -1,5 +1,5 @@
 <template>
-<main>
+<main class="d-flex align-items-center">
     <img src="../assets/img/spotify.png" alt="Spotify Icon">
 </main>
 </template>

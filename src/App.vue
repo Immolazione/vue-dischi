@@ -18,6 +18,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import 'bootstrap';
 @import './assets/scss/_generics.scss';
 @import './assets/scss/_utils.scss';
 @import './assets/scss/_vars.scss';
