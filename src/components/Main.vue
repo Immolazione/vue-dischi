@@ -27,7 +27,7 @@ name: 'Main',
     mounted() {
         axios.get('https://flynn.boolean.careers/exercises/api/array/music').then( res => {
             this.songsList = res.data.response;
-            console.log(this.songsList);
+            console.table(this.songsList);
         });
     }
 };

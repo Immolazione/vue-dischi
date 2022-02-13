@@ -1,12 +1,19 @@
 <template>
 <header class="w-100 d-flex align-items-center">
+  <div class="w-50 d-flex justify-content-between align-items-center">
     <img class="ms-3" src="../assets/img/spotify.png" alt="Spotify Icon">
+    <SearchBar />
+  </div>
 </header>
 </template>
 
 <script>
+import SearchBar from './SearchBar.vue'
 export default {
   name: 'Header',
+  components: {
+    SearchBar
+  }
 }
 </script>
 
@@ -14,9 +21,9 @@ export default {
 <style scoped lang="scss">
 @import '../assets/scss/style.scss';
 header {
-  position: fixed;
-  height: 5rem;
   background-color: $header-color;
+  height: 5rem;
+  position: fixed;
   img {
     width: 4rem;
   }
