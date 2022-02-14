@@ -1,7 +1,7 @@
 <template>
 <div>
-  <Header />
-  <Main />
+  <Header :genres="genres" @selected-genre="setSelectedGenre" />
+  <Main @genres-ready="setGenres" :selected-genre="selectedGenre" />
 </div>
 </template>
 
@@ -13,7 +13,21 @@ export default {
   components: {
     Header,
     Main
-  }
+  },
+  data() {
+    return{
+      genres: [],
+      selectedGenre: "",
+    }
+  },
+  methods: {
+    setGenres(genres) {
+      this.genres = genres;
+    },
+    setSelectedGenre(genre){
+      this.selectedGenre = genre;
+    }
+  },
 }
 </script>
 
